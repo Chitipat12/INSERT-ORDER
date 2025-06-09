@@ -3,63 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - INSERT ORDER</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>INSERT ORDER</h1>
-    </header>
+    <div class="login-container">
+        <h1 class="heading">INSERT ORDER</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-    <section id="home-section">
-        <h2>Welcome to INSERT ORDER</h2>
-        <nav>
-            <button onclick="showOrderForm()">สั่งซื้อ</button>
-            <button onclick="showOrderStatus()">ติดตาม STATUS ORDER</button>
-        </nav>
-    </section>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-    <section id="order-form" style="display: none;">
-        <h2>สั่งซื้อ</h2>
-        <form id="purchaseForm">
-            <label for="product-name">ชื่อผลิตภัณฑ์:</label>
-            <input type="text" id="product-name" name="product-name" required><br>
-
-            <label for="sds">SDS:</label>
-            <input type="text" id="sds" name="sds" required><br>
-
-            <label for="quantity">จำนวน:</label>
-            <input type="number" id="quantity" name="quantity" required><br>
-
-            <label for="unit">หน่วย:</label>
-            <input type="text" id="unit" name="unit" required><br>
-
-            <label for="purchase-link">Link สั่งซื้อ:</label>
-            <input type="url" id="purchase-link" name="purchase-link" required><br>
-
-            <label for="image">แนบรูปภาพ:</label>
-            <input type="file" id="image" name="image" accept="image/*"><br>
-
-            <button type="submit">ส่งคำสั่งซื้อ</button>
+            <button type="submit">Login</button>
         </form>
-    </section>
-
-    <section id="status-order" style="display: none;">
-        <h2>ติดตาม STATUS ORDER</h2>
-        <p>หมายเลข PR: <input type="text" id="pr-number"></p>
-        <p>หมายเลข PO: <input type="text" id="po-number"></p>
-        <p>ราคา: <input type="text" id="price"></p>
-        <p>ใบเสนอราคา: <input type="text" id="quotation"></p>
-        <p>สถานะ:
-            <select id="status">
-                <option value="approved">Approve</option>
-                <option value="rejected">Reject</option>
-            </select>
-        </p>
-        <p>วันกำหนดส่ง: <input type="date" id="delivery-date"></p>
-    </section>
-
+        <div id="error-message" style="color: red; display: none;">Invalid username or password.</div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
-
