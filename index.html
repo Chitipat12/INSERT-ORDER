@@ -3,39 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to the Internal Order System</h1>
+        <h1>Login System for Order Management</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#section1">Order Form</a></li>
-            <li><a href="#section2">Order Status</a></li>
-            <li><a href="#section3">Contact</a></li>
-        </ul>
-    </nav>
+    <section>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-    <section id="section1">
-        <h2>Place an Order</h2>
-        <p>Use the form below to place an order.</p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <div id="error-message" style="color: red; display: none;">Invalid username or password.</div>
     </section>
 
-    <section id="section2">
-        <h2>Order Status</h2>
-        <p>Track your order status here.</p>
-    </section>
-
-    <section id="section3">
-        <h2>Contact Us</h2>
-        <p>For any queries, feel free to reach out.</p>
-    </section>
-
-    <footer>
-        <p>Internal Order System - Powered by GitHub Pages</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
