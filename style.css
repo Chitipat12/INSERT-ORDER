@@ -1,80 +1,25 @@
-/* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// script.js
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
 
-/* Body and form styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+    // Get username and password input values
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-}
+    // Define valid users (for demonstration purposes)
+    var users = {
+        "USER": "USER",       // User credentials
+        "MANAGER": "MANAGER", // Approver credentials
+        "STORE": "STORE"      // Receiver credentials
+    };
 
-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-}
-
-h1 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-h2 {
-    margin-bottom: 15px;
-}
-
-label {
-    font-size: 1rem;
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#error-message {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: red;
-}
+    // Check if the entered username and password match the predefined ones
+    if (users[username] && users[username] === password) {
+        // Redirect to a dashboard or another page upon successful login
+        alert("Login successful!");
+        // window.location.href = "dashboard.html"; // Uncomment to redirect to a dashboard
+    } else {
+        // Show error message if login fails
+        document.getElementById("error-message").style.display = "block";
+    }
+});
