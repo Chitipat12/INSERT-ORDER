@@ -19,5 +19,17 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     } else {
         // หากข้อมูลไม่ถูกต้อง
         document.getElementById('error-message').style.display = 'block';
+        function showOrderForm() {
+    document.getElementById("home-section").style.display = "none";
+    document.getElementById("order-form").style.display = "block";
+    document.getElementById("status-order").style.display = "none";
+}
+
+function showOrderStatus() {
+    document.getElementById("home-section").style.display = "none";
+    document.getElementById("order-form").style.display = "none";
+    document.getElementById("status-order").style.display = "block";
+}
+
     }
 });
