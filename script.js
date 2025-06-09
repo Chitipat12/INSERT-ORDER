@@ -1,24 +1,23 @@
-// script.js
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get username and password input values
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-
-    // Define valid users (for demonstration purposes)
-    var users = {
-        "USER": "USER",       // User credentials
-        "MANAGER": "MANAGER", // Approver credentials
-        "STORE": "STORE"      // Receiver credentials
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    // รหัสผู้ใช้และรหัสผ่านที่ถูกต้อง
+    const users = {
+        "USER": "USER",
+        "MANAGER": "MANAGER",
+        "STORE": "STORE"
     };
 
-    // Check if the entered username and password match the predefined ones
+    // ดึงข้อมูลจากฟอร์ม
+    let username = document.getElementById('username').value.toUpperCase(); // ทำให้ตัวพิมพ์ใหญ่
+    let password = document.getElementById('password').value.toUpperCase(); // ทำให้ตัวพิมพ์ใหญ่
+
+    // ตรวจสอบ username และ password
     if (users[username] && users[username] === password) {
-        // Redirect to Home page upon successful login
-        window.location.href = "home.html"; // Update this with your desired next page URL
+        // หากข้อมูลถูกต้อง
+        window.location.href = 'home.html'; // เปลี่ยนไปยังหน้า Home
     } else {
-        // Show error message if login fails
-        document.getElementById("error-message").style.display = "block";
+        // หากข้อมูลไม่ถูกต้อง
+        document.getElementById('error-message').style.display = 'block';
     }
 });
