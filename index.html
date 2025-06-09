@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>  
+    <title>Login Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-container">
-        <header>
-            <h1>Cutting Tools</h1>
-        </header>
+    <header>
+        <h1>Login System for Order Management</h1>
+    </header>
 
-        <section class="login-section">
-            <h2>Login</h2>
-            <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+    <section>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
 
-                <button type="submit">Login</button>
-            </form>
-            <div id="error-message" style="color: red; display: none;">Invalid username or password.</div>
-        </section>
-    </div>
+            <button type="submit">Login</button>
+        </form>
+        <div id="error-message" style="color: red; display: none;">Invalid username or password.</div>
+    </section>
 
     <script src="script.js"></script>
 </body>
 </html>
+
