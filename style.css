@@ -18,15 +18,15 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50%; /* กำหนดให้ภาพครอบคลุมครึ่งหน้าจอ */
+    height: 100%; /* กำหนดให้ภาพครอบคลุมทั้งหน้า */
     background: url('https://raw.githubusercontent.com/Chitipat12/INSERT-ORDER/main/สกรีนช็อต%202025-06-08%20204427.jpg') no-repeat center center fixed; /* ใช้ URL ของภาพ */
-    background-size: cover;
+    background-size: cover; /* ปรับให้ภาพขยายเต็มขนาด */
     z-index: -1; /* ให้ภาพอยู่ด้านหลังของฟอร์ม */
 }
 
 /* การตกแต่งของหัวข้อ */
 .header {
-    font-size: 36px;
+    font-size: 60px; /* เพิ่มขนาดตัวอักษรของ "INSERT ORDER" */
     font-weight: bold;
     color: white;
     text-align: center;
