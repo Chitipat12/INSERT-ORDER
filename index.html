@@ -4,50 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INSERT ORDER</title>
+    <link rel="stylesheet" href="style.css"> <!-- ใช้ไฟล์ CSS ของคุณ -->
+    <script src="script.js" defer></script> <!-- ใช้ไฟล์ JS ของคุณ -->
     <style>
-        /* การตั้งค่าภาพรวมของ body */
+        /* CSS สำหรับหน้า Login */
         body {
-            font-family: Arial, sans-serif; /* กำหนดฟอนต์ของตัวอักษร */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f3f3f3; /* กำหนดสีพื้นหลัง */
-            height: 100vh; /* ความสูงของหน้าจอ */
+            background-color: #f3f3f3;
+            height: 100vh;
             display: flex;
-            justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
-            align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-            flex-direction: column; /* ตั้งค่าให้องค์ประกอบอยู่ในแนวตั้ง */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
-        /* การตั้งค่าหัวข้อหลัก (Header) */
         .header {
             font-size: 36px;
             font-weight: bold;
-            color: white; /* ข้อความสีขาว */
+            color: white;
             text-align: center;
             margin-top: 20px;
         }
 
-        /* การตั้งค่าของกล่องที่ใช้สำหรับ Login */
         .login-container {
             background: rgba(255, 255, 255, 0.9); 
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กล่อง */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: 300px; /* กำหนดขนาดความกว้าง */
-            z-index: 1;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
+            width: 300px;
         }
 
         .input-field {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #ccc; /* กรอบของกล่องข้อความ */
+            border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 16px;
         }
@@ -55,7 +49,7 @@
         .login-btn {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50; /* สีปุ่ม */
+            background-color: #4CAF50;
             border: none;
             color: white;
             font-size: 18px;
@@ -64,16 +58,14 @@
         }
 
         .login-btn:hover {
-            background-color: #45a049; /* เปลี่ยนสีปุ่มเมื่อเอาเมาส์ไปชี้ */
+            background-color: #45a049;
         }
 
-        /* ข้อความแสดงข้อผิดพลาด */
         .error {
             color: red;
             font-size: 14px;
         }
 
-        /* การตั้งค่าภาพพื้นหลัง */
         .background-image {
             position: absolute;
             top: 0;
@@ -82,53 +74,39 @@
             bottom: 0;
             background: url('file-6713a71a-1281-436e-b60e-3fd213ca4381.png') no-repeat center center fixed;
             background-size: cover;
-            opacity: 0.4; /* ทำให้ภาพพื้นหลังโปร่งแสง */
-            z-index: -1; /* ทำให้ภาพพื้นหลังอยู่ด้านหลัง */
-        }
-
-        .logo {
-            max-width: 100%; /* จำกัดขนาดของโลโก้ */
-            height: auto;
-            margin-bottom: 10px;
+            opacity: 0.4;
+            z-index: -1;
         }
 
     </style>
 </head>
 <body>
 
-    <!-- ส่วนของภาพพื้นหลัง -->
     <div class="background-image"></div>
 
-    <!-- ส่วนของหัวข้อ (INSERT ORDER) -->
     <div class="header">INSERT ORDER</div>
 
-    <!-- กล่องที่ใช้สำหรับล็อกอิน -->
     <div class="login-container">
-        <!-- โลโก้ที่ใช้แสดง -->
-        <img src="file-6713a71a-1281-436e-b60e-3fd213ca4381.png" alt="Logo" class="logo">
         <h2>Login</h2>
-        <!-- ฟอร์มสำหรับล็อกอิน -->
         <form id="loginForm">
             <input type="text" id="username" class="input-field" placeholder="Username" required>
             <input type="password" id="password" class="input-field" placeholder="Password" required>
             <button type="submit" class="login-btn">Login</button>
-            <p class="error" id="errorMessage"></p> <!-- ข้อความแสดงข้อผิดพลาด -->
+            <p class="error" id="errorMessage"></p>
         </form>
     </div>
 
     <script>
-        // เพิ่มการทำงานให้กับฟอร์มล็อกอิน
         document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // หยุดการส่งฟอร์มตามปกติ
+            event.preventDefault();
 
-            const username = document.getElementById('username').value.toUpperCase(); // แปลงชื่อผู้ใช้เป็นตัวพิมพ์ใหญ่
-            const password = document.getElementById('password').value; // เก็บค่ารหัสผ่าน
+            const username = document.getElementById('username').value.toUpperCase();
+            const password = document.getElementById('password').value;
 
-            // ตรวจสอบชื่อผู้ใช้และรหัสผ่าน
             if (username === "ADMIN" && password === "ADMIN") {
-                window.location.href = 'dashboard.html'; // ถ้าถูกต้องให้ไปที่หน้าดashboard
+                window.location.href = 'dashboard.html'; // เปลี่ยนไปที่หน้าหลังจากล็อกอินสำเร็จ
             } else {
-                document.getElementById('errorMessage').textContent = "Invalid username or password!"; // หากไม่ถูกต้องให้แสดงข้อความผิดพลาด
+                document.getElementById('errorMessage').textContent = "Invalid username or password!"; // ข้อความหากข้อมูลไม่ถูกต้อง
             }
         });
     </script>
