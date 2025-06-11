@@ -3,48 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - INSERT ORDER</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('your-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0.2;
+            z-index: -1;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>INSERT ORDER</h1>
-    </header>
 
-    <section id="home-section">
-        <h2>Welcome to INSERT ORDER</h2>
-        <nav>
-            <button onclick="showOrderForm()">สั่งซื้อ</button>
-            <button onclick="showOrderStatus()">ติดตาม STATUS ORDER</button>
-        </nav>
-    </section>
+<div class="background-image"></div>
+<div class="login-container">
+    <img src="your-image.jpg" alt="Logo" class="logo">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="username" class="input-field" placeholder="Username" required>
+        <input type="password" id="password" class="input-field" placeholder="Password" required>
+        <button type="submit" class="login-btn">Login</button>
+        <p class="error" id="errorMessage"></p>
+    </form>
+</div>
 
-    <section id="order-form" style="display: none;">
-        <h2>สั่งซื้อ</h2>
-        <form id="purchaseForm">
-            <label for="product-name">ชื่อผลิตภัณฑ์:</label>
-            <input type="text" id="product-name" name="product-name" required><br>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-            <label for="sds">SDS:</label>
-            <input type="text" id="sds" name="sds" required><br>
+        const username = document.getElementById('username').value.toUpperCase();
+        const password = document.getElementById('password').value;
 
-            <label for="quantity">จำนวน:</label>
-            <input type="number" id="quantity" name="quantity" required><br>
+        if (username === "ADMIN" && password === "ADMIN") {
+            window.location.href = 'dashboard.html'; // Replace with your dashboard URL
+        } else {
+            document.getElementById('errorMessage').textContent = "Invalid username or password!";
+        }
+    });
+</script>
 
-            <label for="unit">หน่วย:</label>
-            <input type="text" id="unit" name="unit" required><br>
-
-            <label for="purchase-link">Link สั่งซื้อ:</label>
-            <input type="url" id="purchase-link" name="purchase-link" required><br>
-
-            <label for="image">แนบรูปภาพ:</label>
-            <input type="file" id="image" name="image" accept="image/*"><br>
-
-            <button type="submit">ส่งคำสั่งซื้อ</button>
-        </form>
-    </section>
-
-    <section id="status-order" style="display: none;">
-        <h2>ติดตาม STATUS ORDER</h2>
-        <form id="statusForm">
-            <p>หมายเลข PR: <input type="text" id="pr-nu
+</body>
+</html>
