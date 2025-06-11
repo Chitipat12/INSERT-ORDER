@@ -4,88 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INSERT ORDER</title>
-    <style>
-        /* CSS สำหรับหน้า Login */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f3f3;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .header {
-            font-size: 36px;
-            font-weight: bold;
-            color: white;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        /* การตกแต่งของฟอร์มล็อกอิน */
-        .login-container {
-            background: rgba(255, 255, 255, 0.9); 
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 300px;
-        }
-
-        .input-field {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .login-btn:hover {
-            background-color: #45a049;
-        }
-
-        .error {
-            color: red;
-            font-size: 14px;
-        }
-
-        /* การตั้งค่าภาพพื้นหลัง */
-        .background-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('your-uploaded-image.png') no-repeat center center fixed; /* เส้นทางของภาพพื้นหลัง */
-            background-size: cover;
-            opacity: 0.4;
-            z-index: -1;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- ลิงก์ไปยังไฟล์ CSS -->
+    <script src="script.js" defer></script> <!-- ลิงก์ไปยังไฟล์ JavaScript -->
 </head>
 <body>
 
-    <div class="background-image"></div> <!-- แสดงภาพพื้นหลัง -->
+    <!-- ส่วนภาพพื้นหลัง -->
+    <div class="background-image"></div>
 
-    <div class="header">INSERT ORDER</div> <!-- แสดงชื่อเว็บไซต์ -->
+    <div class="header">INSERT ORDER</div> <!-- ชื่อของหน้าเว็บ -->
 
+    <!-- ฟอร์มล็อกอิน -->
     <div class="login-container">
         <h2>Login</h2>
         <form id="loginForm">
@@ -95,23 +24,6 @@
             <p class="error" id="errorMessage"></p> <!-- ข้อความแสดงข้อผิดพลาด -->
         </form>
     </div>
-
-    <script>
-        // การตรวจสอบการล็อกอิน
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // ป้องกันการส่งฟอร์มตามปกติ
-
-            const username = document.getElementById('username').value.toUpperCase(); // เปลี่ยนชื่อผู้ใช้เป็นตัวพิมพ์ใหญ่
-            const password = document.getElementById('password').value; // เก็บค่ารหัสผ่าน
-
-            // ตรวจสอบชื่อผู้ใช้และรหัสผ่าน
-            if (username === "ADMIN" && password === "ADMIN") {
-                window.location.href = 'dashboard.html'; // ถ้าถูกต้องให้ไปที่หน้าหลังจากล็อกอินสำเร็จ
-            } else {
-                document.getElementById('errorMessage').textContent = "Invalid username or password!"; // ข้อความหากข้อมูลไม่ถูกต้อง
-            }
-        });
-    </script>
 
 </body>
 </html>
