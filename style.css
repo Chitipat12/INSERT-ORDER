@@ -17,7 +17,7 @@ body, html {
     justify-content: center; /* จัดให้เนื้อหากลางแนวนอน */
     align-items: center; /* จัดให้เนื้อหากลางแนวตั้ง */
     height: 100%; /* เต็มหน้าจอ */
-    background-image: url('0553189f-b71c-4a31-9cb0-d2f1d872b206.png'); /* ใช้พาธไฟล์ภาพพื้นหลัง */
+    background-image: url('LOGIN.png'); /* ใช้พาธไฟล์ภาพพื้นหลัง */
     background-size: cover; /* ปรับขนาดพื้นหลังให้เต็มพื้นที่ */
     background-position: center; /* จัดตำแหน่งพื้นหลังให้ตรงกลาง */
     background-repeat: no-repeat; /* ไม่ให้พื้นหลังซ้ำ */
