@@ -8,7 +8,7 @@
 /* กำหนดให้ body และ html ใช้เต็มหน้าจอ */
 body, html {
     height: 100%;
-    font-family: Arial, sans-serif; /* กำหนดฟอนต์ */
+    font-family: Arial, sans-serif;
 }
 
 /* กล่องที่ใช้สำหรับแสดงฟอร์ม login */
@@ -17,57 +17,65 @@ body, html {
     justify-content: center; /* จัดให้เนื้อหากลางแนวนอน */
     align-items: center; /* จัดให้เนื้อหากลางแนวตั้ง */
     height: 100%; /* เต็มหน้าจอ */
-    background-image: url('7cc59264-bbf9-4547-8e7c-35b7d50fd5fe.png'); /* ใช้พาธไฟล์ภาพพื้นหลัง */
+    background-image: url('0553189f-b71c-4a31-9cb0-d2f1d872b206.png'); /* ใช้พาธไฟล์ภาพพื้นหลัง */
     background-size: cover; /* ปรับขนาดพื้นหลังให้เต็มพื้นที่ */
     background-position: center; /* จัดตำแหน่งพื้นหลังให้ตรงกลาง */
+    background-repeat: no-repeat; /* ไม่ให้พื้นหลังซ้ำ */
 }
 
 /* กำหนดลักษณะการแสดงผลของหัวข้อ */
 h1 {
     color: white;
-    font-size: 3em; /* ขนาดตัวอักษร */
+    font-size: 3em;
     text-align: center;
-    margin-bottom: 30px; /* ระยะห่างด้านล่าง */
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* ใส่เงาให้ข้อความ */
 }
 
 /* สไตล์ของฟอร์ม login */
 .login-form {
     background: rgba(255, 255, 255, 0.8); /* พื้นหลังสีขาวโปร่งแสง */
-    padding: 20px;
-    border-radius: 8px; /* มุมโค้ง */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เงา */
+    padding: 30px;
+    border-radius: 10px; /* มุมโค้ง */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* เงา */
+    width: 100%;
+    max-width: 400px; /* กำหนดความกว้างสูงสุด */
+    text-align: center;
 }
 
 /* สไตล์ของ label (ป้ายข้อความ) */
 label {
     font-size: 1.2em;
+    color: #333;
+    margin-bottom: 8px;
     display: block;
-    margin-bottom: 5px;
 }
 
 /* สไตล์ของกล่องกรอกข้อมูล */
 input {
-    width: 100%; /* ทำให้กว้างเต็มพื้นที่ */
-    padding: 10px;
-    margin-bottom: 15px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
     font-size: 1.2em;
-    border: 1px solid #ccc; /* กรอบสีเทา */
-    border-radius: 5px; /* มุมโค้ง */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 /* สไตล์ของปุ่ม login */
 button {
-    width: 100%; /* ทำให้ปุ่มกว้างเต็มพื้นที่ */
-    padding: 10px;
-    background-color: #28a745; /* สีพื้นหลังของปุ่ม */
-    color: white; /* สีข้อความในปุ่ม */
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
     font-size: 1.2em;
     border: none;
-    border-radius: 5px; /* มุมโค้ง */
-    cursor: pointer; /* เปลี่ยนเป็นรูปมือเมื่อวางเมาส์ */
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 /* สไตล์เมื่อวางเมาส์ไปที่ปุ่ม */
 button:hover {
-    background-color: #218838; /* เปลี่ยนสีเมื่อเอาเมาส์ไปชี้ */
+    background-color: #218838;
 }
