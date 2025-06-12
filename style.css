@@ -1,74 +1,64 @@
-/* การตั้งค่าให้หน้าเว็บเต็มจอ */
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f3f3f3;
-    height: 100vh;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    position: relative; /* ใช้ relative สำหรับจัดการตำแหน่งของภาพ */
+    height: 100%;
+    background-image: url('LOGIN.PNG');
+    background-size: cover;
+    background-position: center;
 }
 
-/* การตั้งค่าภาพพื้นหลัง */
-.background-image {
-    position: absolute; /* ใช้ absolute เพื่อให้ภาพอยู่ด้านบน */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* กำหนดให้ภาพครอบคลุมทั้งหน้า */
-    background: url('/mnt/data/LOGIN.png') no-repeat center center fixed; /* ใช้ path ที่ถูกต้อง */
-    background-size: cover; /* ปรับให้ภาพขยายเต็มขนาด */
-    z-index: -1; /* ให้ภาพอยู่ด้านหลังของฟอร์ม */
-}
-
-/* การตกแต่งของหัวข้อ */
-.header {
-    font-size: 60px; /* เพิ่มขนาดตัวอักษรของ "INSERT ORDER" */
-    font-weight: bold;
+h1 {
     color: white;
+    font-size: 3em;
     text-align: center;
-    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-/* การตกแต่งของฟอร์มล็อกอิน */
-.login-container {
-    background: rgba(255, 255, 255, 0.9); 
+.login-form {
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 300px;
-    z-index: 1; /* ให้อยู่ด้านบนของภาพ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.input-field {
+label {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
 }
 
-.login-btn {
+button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
-    border: none;
+    background-color: #28a745;
     color: white;
-    font-size: 18px;
+    font-size: 1.2em;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.login-btn:hover {
-    background-color: #45a049;
-}
-
-.error {
-    color: red;
-    font-size: 14px;
+button:hover {
+    background-color: #218838;
 }
