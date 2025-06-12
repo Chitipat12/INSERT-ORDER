@@ -1,64 +1,73 @@
+/* รีเซ็ตค่า default ของ margin และ padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* กำหนดให้ body และ html ใช้เต็มหน้าจอ */
 body, html {
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* กำหนดฟอนต์ */
 }
 
+/* กล่องที่ใช้สำหรับแสดงฟอร์ม login */
 .login-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-image: url('LOGIN.PNG');
-    background-size: cover;
-    background-position: center;
+    justify-content: center; /* จัดให้เนื้อหากลางแนวนอน */
+    align-items: center; /* จัดให้เนื้อหากลางแนวตั้ง */
+    height: 100%; /* เต็มหน้าจอ */
+    background-image: url('7cc59264-bbf9-4547-8e7c-35b7d50fd5fe.png'); /* ใช้พาธไฟล์ภาพพื้นหลัง */
+    background-size: cover; /* ปรับขนาดพื้นหลังให้เต็มพื้นที่ */
+    background-position: center; /* จัดตำแหน่งพื้นหลังให้ตรงกลาง */
 }
 
+/* กำหนดลักษณะการแสดงผลของหัวข้อ */
 h1 {
     color: white;
-    font-size: 3em;
+    font-size: 3em; /* ขนาดตัวอักษร */
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* ระยะห่างด้านล่าง */
 }
 
+/* สไตล์ของฟอร์ม login */
 .login-form {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.8); /* พื้นหลังสีขาวโปร่งแสง */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; /* มุมโค้ง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เงา */
 }
 
+/* สไตล์ของ label (ป้ายข้อความ) */
 label {
     font-size: 1.2em;
     display: block;
     margin-bottom: 5px;
 }
 
+/* สไตล์ของกล่องกรอกข้อมูล */
 input {
-    width: 100%;
+    width: 100%; /* ทำให้กว้างเต็มพื้นที่ */
     padding: 10px;
     margin-bottom: 15px;
     font-size: 1.2em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ccc; /* กรอบสีเทา */
+    border-radius: 5px; /* มุมโค้ง */
 }
 
+/* สไตล์ของปุ่ม login */
 button {
-    width: 100%;
+    width: 100%; /* ทำให้ปุ่มกว้างเต็มพื้นที่ */
     padding: 10px;
-    background-color: #28a745;
-    color: white;
+    background-color: #28a745; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีข้อความในปุ่ม */
     font-size: 1.2em;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 5px; /* มุมโค้ง */
+    cursor: pointer; /* เปลี่ยนเป็นรูปมือเมื่อวางเมาส์ */
 }
 
+/* สไตล์เมื่อวางเมาส์ไปที่ปุ่ม */
 button:hover {
-    background-color: #218838;
+    background-color: #218838; /* เปลี่ยนสีเมื่อเอาเมาส์ไปชี้ */
 }
