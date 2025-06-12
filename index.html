@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSERT ORDER</title>
-    <link rel="stylesheet" href="style.css"> <!-- ลิงก์ไปยังไฟล์ CSS -->
-    <script src="script.js" defer></script> <!-- ลิงก์ไปยังไฟล์ JavaScript -->
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- ส่วนภาพพื้นหลัง -->
-    <div class="background-image"></div>
-
-    <div class="header">INSERT ORDER</div> <!-- ชื่อของหน้าเว็บ -->
-
-    <!-- ฟอร์มล็อกอิน -->
     <div class="login-container">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <input type="text" id="username" class="input-field" placeholder="Username" required>
-            <input type="password" id="password" class="input-field" placeholder="Password" required>
-            <button type="submit" class="login-btn">Login</button>
-            <p class="error" id="errorMessage"></p> <!-- ข้อความแสดงข้อผิดพลาด -->
-        </form>
+        <h1>INSERT ORDER</h1>
+        <div class="login-form">
+            <form action="" method="POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" onclick="validateLogin()">Login</button>
+            </form>
+        </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
