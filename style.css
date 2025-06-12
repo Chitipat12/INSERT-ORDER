@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%; /* กำหนดให้ภาพครอบคลุมทั้งหน้า */
-    background: url('/mnt/data/F7182638-A214-4CE0-91FC-AD0A4DAC3DD4.jpeg') no-repeat center center fixed; /* ใช้ path ที่ถูกต้อง */
+    background: url('/mnt/data/LOGIN.png') no-repeat center center fixed; /* ใช้ path ที่ถูกต้อง */
     background-size: cover; /* ปรับให้ภาพขยายเต็มขนาด */
     z-index: -1; /* ให้ภาพอยู่ด้านหลังของฟอร์ม */
 }
