@@ -60,6 +60,12 @@ document.getElementById("order-update-form").addEventListener("submit", function
   newOrder.textContent = `ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`;
   orderHistory.appendChild(newOrder);
 });
+document.querySelectorAll('.order-item button').forEach((button) => {
+  button.addEventListener('click', function() {
+    const orderStatus = button.textContent === 'อนุมัติ' ? 'ได้รับการอนุมัติ' : 'ไม่อนุมัติ';
+    alert(`คำสั่งซื้อ ${orderStatus}`);
+  });
+});
 
 });
 
