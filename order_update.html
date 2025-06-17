@@ -1,30 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Update</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>การอัปเดตคำสั่งซื้อ</h1>
-    <form id="order-update-form">
-      <label for="order-status">สถานะการชำระเงิน:</label>
-      <select id="order-status">
-        <option value="paid">ชำระเงินแล้ว</option>
-        <option value="unpaid">ยังไม่ชำระเงิน</option>
-      </select>
+document.getElementById("order-update-form").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-      <label for="shipping-status">สถานะการจัดส่ง:</label>
-      <select id="shipping-status">
-        <option value="shipped">จัดส่งแล้ว</option>
-        <option value="pending">รอดำเนินการ</option>
-      </select>
+  const orderStatus = document.getElementById("order-status").value;
+  const shippingStatus = document.getElementById("shipping-status").value;
 
-      <button type="submit">บันทึกการอัปเดต</button>
-    </form>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+  console.log(`สถานะการชำระเงิน: ${orderStatus}, สถานะการจัดส่ง: ${shippingStatus}`);
+  alert("การอัปเดตคำสั่งซื้อเสร็จสิ้น!");
+});
