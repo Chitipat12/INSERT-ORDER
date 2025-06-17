@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Update</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>การอัปเดตคำสั่งซื้อ</h1>
+    <form id="order-update-form">
+      <label for="order-status">สถานะการชำระเงิน:</label>
+      <select id="order-status">
+        <option value="paid">ชำระเงินแล้ว</option>
+        <option value="unpaid">ยังไม่ชำระเงิน</option>
+      </select>
+
+      <label for="shipping-status">สถานะการจัดส่ง:</label>
+      <select id="shipping-status">
+        <option value="shipped">จัดส่งแล้ว</option>
+        <option value="pending">รอดำเนินการ</option>
+      </select>
+
+      <button type="submit">บันทึกการอัปเดต</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
