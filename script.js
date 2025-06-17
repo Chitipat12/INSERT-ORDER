@@ -45,7 +45,22 @@ document.getElementById("order-update-form").addEventListener("submit", function
     window.location.href = `${users[username].role.toLowerCase().replace(' ', '_')}.html`;  // เปลี่ยนไปที่หน้าแต่ละบทบาท
   } else {
     errorMessage.textContent = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง';
+    
   }
+    document.getElementById('order-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const productName = document.getElementById('product-name').value;
+  const quantity = document.getElementById('quantity').value;
+  const price = document.getElementById('price').value;
+
+  // เพิ่มคำสั่งซื้อในประวัติ
+  const orderHistory = document.getElementById('order-history');
+  const newOrder = document.createElement('li');
+  newOrder.textContent = `ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`;
+  orderHistory.appendChild(newOrder);
+});
+
 });
 
 });
