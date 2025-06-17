@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Placement</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>การสั่งซื้อสินค้า</h1>
-    <form id="order-form">
-      <label for="product-name">ชื่อสินค้า:</label>
-      <input type="text" id="product-name" required>
+document.getElementById("order-form").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-      <label for="quantity">ปริมาณ:</label>
-      <input type="number" id="quantity" required>
+  // คำนวณการส่งคำสั่งซื้อ
+  const productName = document.getElementById("product-name").value;
+  const quantity = document.getElementById("quantity").value;
+  const price = document.getElementById("price").value;
 
-      <label for="price">ราคา:</label>
-      <input type="number" id="price" required>
+  console.log(`สินค้าที่สั่ง: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`);
+  
+  // ส่งคำสั่งซื้อและเปลี่ยนสถานะ
+  alert("คำสั่งซื้อได้รับการส่ง!");
 
-      <button type="submit">ส่งคำสั่งซื้อ</button>
-    </form>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+  // เพิ่มคำสั่งซื้อในประวัติ
+  const orderHistory = document.getElementById('order-history');
+  const newOrder = document.createElement('li');
+  newOrder.textContent = `ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`;
+  orderHistory.appendChild(newOrder);
+});
