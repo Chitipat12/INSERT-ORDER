@@ -9,6 +9,9 @@ function validateLogin(event) {
     if (username === 'ADMIN' && password === 'ADMIN') {
         // Redirect to the dashboard if login is successful
         window.location.href = 'dashboard.html'; // หน้า Dashboard
+        if (username === 'SPREECHA' && password === 'SPREECHA') {
+        // Redirect to the dashboard if login is successful
+        window.location.href = 'dashboard.html'; // หน้า Dashboard
     } else {
         // Display error message if login fails
         document.getElementById('error-message').style.display = 'block';
