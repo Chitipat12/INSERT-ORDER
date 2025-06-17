@@ -1,11 +1,16 @@
-function validateLogin() {
-    const username = document.getElementById("username").value; // ดึงค่าจากช่องกรอกชื่อผู้ใช้
-    const password = document.getElementById("password").value; // ดึงค่าจากช่องกรอกรหัสผ่าน
+function validateLogin(event) {
+    event.preventDefault(); // Prevent form submission
 
-    // เช็คว่าชื่อผู้ใช้และรหัสผ่านตรงกับที่กำหนดไว้หรือไม่
-    if (username === "ADMIN" && password === "ADMIN") {
-        alert("Login Successful!"); // หากถูกต้อง จะแสดงข้อความ "Login Successful!"
+    // Get the username and password values
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Check if the username and password match the correct credentials
+    if (username === 'ADMIN' && password === 'ADMIN') {
+        // Redirect to the dashboard if login is successful
+        window.location.href = 'dashboard.html'; // หน้า Dashboard
     } else {
-        alert("Invalid Username or Password."); // หากไม่ถูกต้อง จะแสดงข้อความ "Invalid Username or Password."
+        // Display error message if login fails
+        document.getElementById('error-message').style.display = 'block';
     }
 }
