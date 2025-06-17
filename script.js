@@ -1,6 +1,7 @@
+// ฟังก์ชันสำหรับการส่งคำสั่งซื้อ
 document.getElementById("order-form").addEventListener("submit", function(event) {
   event.preventDefault();
-  
+
   // คำนวณการส่งคำสั่งซื้อ
   const productName = document.getElementById("product-name").value;
   const quantity = document.getElementById("quantity").value;
@@ -10,9 +11,15 @@ document.getElementById("order-form").addEventListener("submit", function(event)
   
   // ส่งคำสั่งซื้อและเปลี่ยนสถานะ
   alert("คำสั่งซื้อได้รับการส่ง!");
+
+  // เพิ่มคำสั่งซื้อในประวัติ
+  const orderHistory = document.getElementById('order-history');
+  const newOrder = document.createElement('li');
+  newOrder.textContent = `ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`;
+  orderHistory.appendChild(newOrder);
 });
 
-// สำหรับการอัปเดตสถานะคำสั่งซื้อ
+// ฟังก์ชันสำหรับการอัปเดตสถานะคำสั่งซื้อ
 document.getElementById("order-update-form").addEventListener("submit", function(event) {
   event.preventDefault();
 
@@ -21,8 +28,10 @@ document.getElementById("order-update-form").addEventListener("submit", function
 
   console.log(`สถานะการชำระเงิน: ${orderStatus}, สถานะการจัดส่ง: ${shippingStatus}`);
   alert("การอัปเดตคำสั่งซื้อเสร็จสิ้น!");
+});
 
-  document.getElementById("login-form").addEventListener("submit", function(event) {
+// ฟังก์ชันสำหรับการตรวจสอบการเข้าสู่ระบบ (Login)
+document.getElementById("login-form").addEventListener("submit", function(event) {
   event.preventDefault();
 
   // รับค่าชื่อผู้ใช้งานและรหัสผ่าน
@@ -41,37 +50,25 @@ document.getElementById("order-update-form").addEventListener("submit", function
   if (users[username] && users[username].password === password) {
     errorMessage.textContent = '';  // ลบข้อความผิดพลาด
     alert(`ยินดีต้อนรับ ${users[username].role}`);
-    // คุณสามารถเปลี่ยนเส้นทางไปยังหน้าอื่น ๆ ตามบทบาทของผู้ใช้ที่เข้าสู่ระบบ
-    window.location.href = `${users[username].role.toLowerCase().replace(' ', '_')}.html`;  // เปลี่ยนไปที่หน้าแต่ละบทบาท
+    // เปลี่ยนไปที่หน้าแต่ละบทบาท
+    window.location.href = `${users[username].role.toLowerCase().replace(' ', '_')}.html`; 
   } else {
     errorMessage.textContent = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง';
-    
   }
-    document.getElementById('order-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  const productName = document.getElementById('product-name').value;
-  const quantity = document.getElementById('quantity').value;
-  const price = document.getElementById('price').value;
-
-  // เพิ่มคำสั่งซื้อในประวัติ
-  const orderHistory = document.getElementById('order-history');
-  const newOrder = document.createElement('li');
-  newOrder.textContent = `ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`;
-  orderHistory.appendChild(newOrder);
 });
+
+// ฟังก์ชันสำหรับการอนุมัติคำสั่งซื้อ (สำหรับผู้อนุมัติ)
 document.querySelectorAll('.order-item button').forEach((button) => {
   button.addEventListener('click', function() {
     const orderStatus = button.textContent === 'อนุมัติ' ? 'ได้รับการอนุมัติ' : 'ไม่อนุมัติ';
     alert(`คำสั่งซื้อ ${orderStatus}`);
   });
 });
+
+// ฟังก์ชันสำหรับการอัปเดตคำสั่งซื้อ (สำหรับผู้ดูแลระบบ)
 document.querySelectorAll('.order-item button').forEach((button) => {
   button.addEventListener('click', function() {
     alert('การอัปเดตคำสั่งซื้อเสร็จสิ้น');
   });
 });
 
-});
-
-});
