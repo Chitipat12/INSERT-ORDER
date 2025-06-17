@@ -1,4 +1,3 @@
-<!-- Login Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +32,8 @@
             const password = document.getElementById('password').value;
 
             // Check if the username and password match the correct credentials
-            if (username === 'ADMIN' && password === 'ADMIN') {
+            if ((username === 'ADMIN' && password === 'ADMIN') || 
+                (username === 'SPREECHA' && password === 'SPREECHA')) {
                 // Store username in sessionStorage for future use
                 sessionStorage.setItem('username', username);
                 // Redirect to the dashboard if login is successful
