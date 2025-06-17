@@ -1,21 +1,28 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const role = sessionStorage.getItem('role');
-  if (role) {
-    // แสดงข้อความตามบทบาท
-    const roleMessage = document.getElementById('role-message');
-    roleMessage.textContent = `คุณคือ: ${role}`;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Dashboard</h1>
+    <div id="role-message"></div> <!-- แสดงบทบาทผู้ใช้ -->
+    <div class="order-summary">
+      <div class="order-item">
+        <p>คำสั่งซื้อที่รอดำเนินการ: <span id="pending-orders">0</span></p>
+      </div>
+      <div class="order-item">
+        <p>คำสั่งซื้อที่ได้รับการอนุมัติแล้ว: <span id="approved-orders">0</span></p>
+      </div>
+      <div class="order-item">
+        <p>คำสั่งซื้อที่ถูกอัปเดตแล้ว: <span id="updated-orders">0</span></p>
+      </div>
+    </div>
+  </div>
 
-    // ข้อมูลจำลอง
-    const pendingOrders = 10;    // จำนวนคำสั่งซื้อที่รอดำเนินการ
-    const approvedOrders = 5;    // จำนวนคำสั่งซื้อที่ได้รับการอนุมัติแล้ว
-    const updatedOrders = 3;     // จำนวนคำสั่งซื้อที่ถูกอัปเดตแล้ว
-
-    // อัปเดตข้อมูลในหน้า Dashboard
-    document.getElementById('pending-orders').textContent = pendingOrders;
-    document.getElementById('approved-orders').textContent = approvedOrders;
-    document.getElementById('updated-orders').textContent = updatedOrders;
-  } else {
-    alert("คุณต้องเข้าสู่ระบบก่อน");
-    window.location.href = "login.html"; // หากไม่มีข้อมูลบทบาทผู้ใช้, กลับไปที่หน้า login
-  }
-});
+  <script src="script.js"></script> 
+</body>
+</html>
