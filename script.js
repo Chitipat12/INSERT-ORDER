@@ -1,17 +1,24 @@
-function validateLogin(event) {
-    event.preventDefault(); // Prevent form submission
+document.getElementById("order-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  // คำนวณการส่งคำสั่งซื้อ
+  const productName = document.getElementById("product-name").value;
+  const quantity = document.getElementById("quantity").value;
+  const price = document.getElementById("price").value;
 
-    // Get the username and password values
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+  console.log(`สินค้าที่สั่ง: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`);
+  
+  // ส่งคำสั่งซื้อและเปลี่ยนสถานะ
+  alert("คำสั่งซื้อได้รับการส่ง!");
+});
 
-    // Check if the username and password match the correct credentials
-    if (username === 'ADMIN' && password === 'ADMIN') {
-        // Redirect to the dashboard if login is successful
-        window.location.href = 'dashboard.html'; // หน้า Dashboard
+// สำหรับการอัปเดตสถานะคำสั่งซื้อ
+document.getElementById("order-update-form").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-    } else {
-        // Display error message if login fails
-        document.getElementById('error-message').style.display = 'block';
-    }
-}
+  const orderStatus = document.getElementById("order-status").value;
+  const shippingStatus = document.getElementById("shipping-status").value;
+
+  console.log(`สถานะการชำระเงิน: ${orderStatus}, สถานะการจัดส่ง: ${shippingStatus}`);
+  alert("การอัปเดตคำสั่งซื้อเสร็จสิ้น!");
+});
