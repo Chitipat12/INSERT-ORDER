@@ -66,6 +66,11 @@ document.querySelectorAll('.order-item button').forEach((button) => {
     alert(`คำสั่งซื้อ ${orderStatus}`);
   });
 });
+document.querySelectorAll('.order-item button').forEach((button) => {
+  button.addEventListener('click', function() {
+    alert('การอัปเดตคำสั่งซื้อเสร็จสิ้น');
+  });
+});
 
 });
 
