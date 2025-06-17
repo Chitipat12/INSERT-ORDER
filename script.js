@@ -58,7 +58,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
 });
 
 // ฟังก์ชันสำหรับการอนุมัติคำสั่งซื้อ (สำหรับผู้อนุมัติ)
-document.querySelectorAll('.order-item button').forEach((button) => {
+document.querySelectorAll('.order-item .approve-button').forEach((button) => {
   button.addEventListener('click', function() {
     const orderStatus = button.textContent === 'อนุมัติ' ? 'ได้รับการอนุมัติ' : 'ไม่อนุมัติ';
     alert(`คำสั่งซื้อ ${orderStatus}`);
@@ -66,9 +66,8 @@ document.querySelectorAll('.order-item button').forEach((button) => {
 });
 
 // ฟังก์ชันสำหรับการอัปเดตคำสั่งซื้อ (สำหรับผู้ดูแลระบบ)
-document.querySelectorAll('.order-item button').forEach((button) => {
+document.querySelectorAll('.order-item .update-button').forEach((button) => {
   button.addEventListener('click', function() {
     alert('การอัปเดตคำสั่งซื้อเสร็จสิ้น');
   });
 });
-
