@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Request System - Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=10.0">
+    <title>INSERT-ORDER - Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
             <img src="logo.png" alt="Logo">
         </div>
         <h1>IT Request System</h1>
-        <p>Welcome, <strong>ADMIN</strong></p>
+        <p>Welcome, <strong id="usernameDisplay">Loading...</strong></p> <!-- Display username here -->
     </header>
 
     <!-- Search Bar and Tabs Section -->
@@ -68,6 +68,14 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Get the username from sessionStorage and display it
+        const username = sessionStorage.getItem('username');
+        if (username) {
+            document.getElementById('usernameDisplay').innerText = username;
+        } else {
+            document.getElementById('usernameDisplay').innerText = 'Guest';
+        }
+    </script>
 </body>
 </html>
