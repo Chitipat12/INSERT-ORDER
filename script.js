@@ -51,7 +51,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     errorMessage.textContent = '';  // ลบข้อความผิดพลาด
     alert(`ยินดีต้อนรับ ${users[username].role}`);
     // เปลี่ยนไปที่หน้าแต่ละบทบาท
-    window.location.href = `${users[username].role.toLowerCase().replace(' ', '_')}.html`; 
+    window.location.href = "dashboard.html";  // เปลี่ยนเส้นทางไปที่ dashboard.html
   } else {
     errorMessage.textContent = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง';
   }
@@ -62,6 +62,9 @@ document.querySelectorAll('.order-item .approve-button').forEach((button) => {
   button.addEventListener('click', function() {
     const orderStatus = button.textContent === 'อนุมัติ' ? 'ได้รับการอนุมัติ' : 'ไม่อนุมัติ';
     alert(`คำสั่งซื้อ ${orderStatus}`);
+
+    // สามารถเพิ่มการอัปเดตคำสั่งซื้อในที่นี้ (ถ้าต้องการ)
+    button.textContent = orderStatus === 'ได้รับการอนุมัติ' ? 'คำสั่งซื้อได้รับการอนุมัติ' : 'คำสั่งซื้อไม่ได้รับอนุมัติ';
   });
 });
 
@@ -69,5 +72,6 @@ document.querySelectorAll('.order-item .approve-button').forEach((button) => {
 document.querySelectorAll('.order-item .update-button').forEach((button) => {
   button.addEventListener('click', function() {
     alert('การอัปเดตคำสั่งซื้อเสร็จสิ้น');
+    // สามารถเพิ่มการอัปเดตสถานะหรือข้อมูลคำสั่งซื้อในที่นี้
   });
 });
