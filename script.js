@@ -75,3 +75,33 @@ document.querySelectorAll('.order-item .update-button').forEach((button) => {
     // สามารถเพิ่มการอัปเดตสถานะหรือข้อมูลคำสั่งซื้อในที่นี้
   });
 });
+// ฟังก์ชันสำหรับการเข้าสู่ระบบ
+document.getElementById("login-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  // รับค่าชื่อผู้ใช้งานและรหัสผ่าน
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const errorMessage = document.getElementById("error-message");
+
+  // ข้อมูลผู้ใช้ที่อนุมัติการเข้าถึง
+  const users = {
+    'ADMIN': { password: 'ADMIN', role: 'Admin' },
+    'USER': { password: 'USER', role: 'ผู้สั่งซื้อ' },
+    'MANAGER': { password: 'MANAGER', role: 'ผู้อนุมัติ' }
+  };
+
+  // ตรวจสอบข้อมูลการเข้าสู่ระบบ
+  if (users[username] && users[username].password === password) {
+    errorMessage.textContent = '';  // ลบข้อความผิดพลาด
+    alert(`ยินดีต้อนรับ ${users[username].role}`);
+    
+    // เก็บบทบาทของผู้ใช้ใน sessionStorage
+    sessionStorage.setItem('role', users[username].role);
+    
+    // เปลี่ยนเส้นทางไปที่หน้า dashboard.html
+    window.location.href = "dashboard.html"; 
+  } else {
+    errorMessage.textContent = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง';
+  }
+});
