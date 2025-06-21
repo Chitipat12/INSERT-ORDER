@@ -1,5 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=10.0">
+  <title>INSERT-ORDER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <form id="login-form">
+      <h2>เข้าสู่ระบบ</h2>
+      <label for="username">ชื่อผู้ใช้งาน:</label>
+      <input type="text" id="username" required>
+
+      <label for="password">รหัสผ่าน:</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">เข้าสู่ระบบ</button>
+      <p id="error-message"></p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +35,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Sidebar -->
-  <div id="sidebar">
-    <ul>
-      <li><a href="dashboard.html">Dashboard</a></li>
-      <li><a href="user.html">คำสั่งซื้อของฉัน</a></li>
-      <li><a href="manager.html" style="display: none;">คำสั่งซื้อทั้งหมด (เฉพาะผู้จัดการ)</a></li>
-      <li><a href="order_approval.html" style="display: none;">รายการอนุมัติ</a></li>
-      <li><a href="admin.html">ตั้งค่า / ผู้ดูแลระบบ</a></li>
-    </ul>
-  </div>
-
-  <!-- Main Content -->
   <div class="container">
-    <!-- Header -->
-    <div id="header">
-      <img src="LOGO.JPG" alt="Company Logo" id="logo">
-      <h1>แบบฟอร์มคำสั่งซื้อ</h1>
-      <div id="user-greeting">
-        <p>สวัสดี, <span id="username"></span></p>
-        <button id="logout-button">ออกจากระบบ</button>
-      </div>
-    </div>
-
-    <!-- Order Summary -->
+    <h1>Dashboard</h1>
+    <div id="role-message"></div> <!-- แสดงบทบาทผู้ใช้ -->
     <div class="order-summary">
       <div class="order-item">
         <p>คำสั่งซื้อที่รอดำเนินการ: <span id="pending-orders">0</span></p>
