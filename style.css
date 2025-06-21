@@ -1,72 +1,60 @@
-* {
-  margin: 0;
+/* Sidebar Navigation */
+#sidebar {
+  width: 200px;
+  background-color: #2c3e50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-top: 20px;
+}
+
+#sidebar ul {
+  list-style-type: none;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: url('LOGIN.jpg') no-repeat center center fixed; /* ใช้รูปพื้นหลัง */
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-container {
-  width: 400px; /* ขนาดกล่องฟอร์ม */
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.9); /* ลดความโปร่งแสงเพื่อให้มองเห็นเนื้อหาชัดเจน */
-  border-radius: 12px; /* ทำมุมกลม */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเพื่อให้ดูมีมิติ */
+#sidebar ul li {
+  padding: 15px;
   text-align: center;
 }
 
-h2 {
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 24px; /* ขนาดตัวอักษรที่ใหญ่ขึ้น */
-  font-weight: bold;
-}
-
-input[type="text"], input[type="password"] {
-  width: 100%;
-  padding: 15px; /* เพิ่มขนาดเพื่อให้กรอกข้อมูลได้สะดวก */
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px; /* มุมกลมเล็กน้อย */
-  font-size: 16px; /* ขนาดตัวอักษรที่อ่านง่าย */
-}
-
-button {
-  width: 100%;
-  padding: 15px; /* เพิ่มความสูงปุ่ม */
-  background-color: #4CAF50;
+#sidebar ul li a {
   color: white;
+  text-decoration: none;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  background-color: #34495e;
+}
+
+/* Header */
+#header {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  height: 50px;
+}
+
+#user-greeting {
+  text-align: right;
+}
+
+#logout-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 6px; /* มุมปุ่มกลม */
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px; /* ขนาดตัวอักษรของปุ่ม */
-  font-weight: bold;
 }
 
-button:hover {
-  background-color: #45a049; /* เปลี่ยนสีเมื่อวางเมาส์ */
+#logout-button:hover {
+  background-color: #c0392b;
 }
-
-#error-message {
-  color: red;
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-input[type="text"]:focus, input[type="password"]:focus {
-  outline: none;
-  border-color: #4CAF50; /* เปลี่ยนสีเส้นขอบเมื่อคลิกที่กล่องกรอกข้อมูล */
-}
-
-input[type="text"], input[type="password"]::placeholder {
-  color: #888; /* เปลี่ยนสีของ placeholder */
-}
-
