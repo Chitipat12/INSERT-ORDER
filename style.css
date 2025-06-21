@@ -7,97 +7,63 @@
 
 body {
   font-family: Arial, sans-serif;
-  display: flex;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 200px;
+  background: url('LOGIN.jpg') no-repeat center center fixed; /* ใช้ภาพพื้นหลัง */
+  background-size: cover;
   height: 100vh;
-  background-color: #333;
-  position: fixed;
-  padding-top: 20px;
-}
-
-.sidebar h3 {
-  color: yellow;
-  text-align: center;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  padding: 10px;
-  text-align: center;
-}
-
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.sidebar ul li a:hover {
-  background-color: #575757;
-}
-
-/* Main content */
-.main-content {
-  margin-left: 200px;
-  padding: 20px;
-}
-
-.header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
-.welcome-message {
-  font-size: 20px;
-  margin-top: 20px;
+.login-container {
+  width: 400px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.8); /* โปร่งใส */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
-.logout-button button {
-  padding: 10px 20px;
-  background-color: red;
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4CAF50;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.logout-button button:hover {
-  background-color: #f44336;
+button:hover {
+  background-color: #45a049;
 }
 
-/* Chart Section */
-.chart-container {
-  margin-top: 40px;
+#error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
-.chart img {
-  width: 100%;
-  height: auto;
+input[type="text"]:focus, input[type="password"]:focus {
+  outline: none;
+  border-color: #4CAF50;
 }
 
-/* Order Summary */
-.order-summary {
-  margin-top: 30px;
-}
-
-.order-item {
-  background-color: #f0f0f0;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-.order-item p {
-  font-size: 18px;
-  color: #333;
-}
