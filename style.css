@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: url('7eae3a46-2fc4-4bd0-b474-a4876dec9108.png') no-repeat center center fixed; /* ใช้ภาพพื้นหลังที่อัปโหลด */
+  background: url('LOGIN.png') no-repeat center center fixed; /* ใช้ภาพพื้นหลังที่อัปโหลด */
   background-size: cover;
   height: 100vh;
   display: flex;
