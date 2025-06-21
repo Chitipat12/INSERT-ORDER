@@ -1,4 +1,3 @@
-/* กำหนดให้หน้าเว็บมีการแสดงผลเต็มหน้าจอ */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: url('LOGIN.png') no-repeat center center fixed; /* ใช้ภาพพื้นหลังที่อัปโหลด */
+  background: url('LOGIN.jpg') no-repeat center center fixed; /* ใช้รูปพื้นหลัง */
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -18,9 +17,9 @@ body {
 .login-container {
   width: 400px; /* ขนาดกล่องฟอร์ม */
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.9); /* ทำให้กล่องฟอร์มโปร่งใส */
-  border-radius: 12px; /* มุมกลม */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เงากล่อง */
+  background-color: rgba(255, 255, 255, 0.9); /* ลดความโปร่งแสงเพื่อให้มองเห็นเนื้อหาชัดเจน */
+  border-radius: 12px; /* ทำมุมกลม */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเพื่อให้ดูมีมิติ */
   text-align: center;
 }
 
@@ -33,27 +32,27 @@ h2 {
 
 input[type="text"], input[type="password"] {
   width: 100%;
-  padding: 15px; /* ขนาดของกล่องกรอกข้อมูล */
+  padding: 15px; /* เพิ่มขนาดเพื่อให้กรอกข้อมูลได้สะดวก */
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 6px; /* มุมกลมเล็กน้อย */
-  font-size: 16px; /* ขนาดตัวอักษร */
+  font-size: 16px; /* ขนาดตัวอักษรที่อ่านง่าย */
 }
 
 button {
   width: 100%;
-  padding: 15px;
-  background-color: #4CAF50; /* สีปุ่ม */
+  padding: 15px; /* เพิ่มความสูงปุ่ม */
+  background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 6px; /* มุมปุ่มกลม */
   cursor: pointer;
-  font-size: 16px;
+  font-size: 16px; /* ขนาดตัวอักษรของปุ่ม */
   font-weight: bold;
 }
 
 button:hover {
-  background-color: #45a049; /* เปลี่ยนสีปุ่มเมื่อเลื่อนเมาส์ไปวาง */
+  background-color: #45a049; /* เปลี่ยนสีเมื่อวางเมาส์ */
 }
 
 #error-message {
@@ -64,9 +63,9 @@ button:hover {
 
 input[type="text"]:focus, input[type="password"]:focus {
   outline: none;
-  border-color: #4CAF50; /* เปลี่ยนสีขอบเมื่อคลิก */
+  border-color: #4CAF50; /* เปลี่ยนสีเส้นขอบเมื่อคลิกที่กล่องกรอกข้อมูล */
 }
 
 input[type="text"], input[type="password"]::placeholder {
-  color: #888;
+  color: #888; /* เปลี่ยนสีของ placeholder */
 }
