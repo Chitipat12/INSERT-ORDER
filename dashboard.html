@@ -7,9 +7,39 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Dashboard</h1>
-    <div id="role-message"></div> <!-- แสดงบทบาทผู้ใช้ -->
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <h3 style="color: #fff; text-align: center; background-color: yellow;">HOME</h3>
+    <ul>
+      <li><a href="dashboard.html" style="color: white;">Dashboard</a></li>
+      <li><a href="order_placement.html" style="color: white;">คำสั่งซื้อของฉัน</a></li>
+      <li><a href="order_approval.html" style="color: white;">คำสั่งซื้อทั้งหมด</a></li>
+      <li><a href="order_update.html" style="color: white;">รายการอนุมัติ</a></li>
+      <li><a href="admin.html" style="color: white;">ตั้งค่า / ผู้ดูแลระบบ</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <div class="welcome-message">
+        <p id="role-message" style="font-size: 18px;"></p> <!-- แสดงข้อมูลผู้ใช้ -->
+      </div>
+      <div class="logout-button">
+        <button onclick="window.location.href = 'index.html';">ออกจากระบบ</button>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-container">
+      <h2>ที่ฉันเคยสั่งซื้อสำเร็จ</h2>
+      <div class="chart">
+        <!-- ใส่กราฟที่คุณต้องการแสดงที่นี่ -->
+        <img src="chart-image.png" alt="chart">
+      </div>
+    </div>
+
+    <!-- Order summary -->
     <div class="order-summary">
       <div class="order-item">
         <p>คำสั่งซื้อที่รอดำเนินการ: <span id="pending-orders">0</span></p>
