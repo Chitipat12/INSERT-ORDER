@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('username', username);
         errorBox.textContent = '';
 
-        alert(ยินดีต้อนรับ ${users[username].role});
-        window.location.href = 'dashboard.html';           // <— เปลี่ยนหน้า
+        alert(`ยินดีต้อนรับ ${users[username].role}`);  // แก้ไข
+        window.location.href = 'dashboard.html';           // เปลี่ยนหน้า
       } else {
         errorBox.textContent = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง';
       }
@@ -46,13 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      console.log(สินค้าที่สั่ง: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price});
+      console.log(`สินค้าที่สั่ง: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`); // แก้ไข
       alert('คำสั่งซื้อได้รับการส่ง!');
 
       const historyUl = document.getElementById('order-history');
       if (historyUl) {
         const li = document.createElement('li');
-        li.textContent = ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price};
+        li.textContent = `ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`;  // แก้ไข
         historyUl.appendChild(li);
       }
 
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const orderStatus    = document.getElementById('order-status').value;
       const shippingStatus = document.getElementById('shipping-status').value;
 
-      console.log(สถานะการชำระเงิน: ${orderStatus}, สถานะการจัดส่ง: ${shippingStatus});
+      console.log(`สถานะการชำระเงิน: ${orderStatus}, สถานะการจัดส่ง: ${shippingStatus}`); // แก้ไข
       alert('การอัปเดตคำสั่งซื้อเสร็จสิ้น!');
     });
   }
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.dataset.state = approved ? 'approved' : 'rejected';
 
       const statusText = approved ? 'ได้รับการอนุมัติ' : 'ไม่อนุมัติ';
-      alert(คำสั่งซื้อ ${statusText});
+      alert(`คำสั่งซื้อ ${statusText}`); // แก้ไข
       btn.textContent = approved
         ? 'คำสั่งซื้อได้รับการอนุมัติ'
         : 'คำสั่งซื้อไม่ได้รับอนุมัติ';
