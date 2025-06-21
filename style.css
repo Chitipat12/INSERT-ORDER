@@ -1,3 +1,4 @@
+/* กำหนดให้หน้าเว็บมีการแสดงผลเต็มหน้าจอ */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: url('LOGIN.jpg') no-repeat center center fixed; /* ใช้รูปพื้นหลัง */
+  background: url('LOGIN.jpg') no-repeat center center fixed; /* ใช้ภาพพื้นหลัง */
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -15,44 +16,44 @@ body {
 }
 
 .login-container {
-  width: 400px; /* ขนาดกล่องฟอร์ม */
+  width: 400px;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.9); /* ลดความโปร่งแสงเพื่อให้มองเห็นเนื้อหาชัดเจน */
-  border-radius: 12px; /* ทำมุมกลม */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเพื่อให้ดูมีมิติ */
+  background-color: rgba(255, 255, 255, 0.8); /* โปร่งใส */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
 h2 {
   margin-bottom: 20px;
   color: #333;
-  font-size: 24px; /* ขนาดตัวอักษรที่ใหญ่ขึ้น */
+  font-size: 24px;
   font-weight: bold;
 }
 
 input[type="text"], input[type="password"] {
   width: 100%;
-  padding: 15px; /* เพิ่มขนาดเพื่อให้กรอกข้อมูลได้สะดวก */
+  padding: 15px;
   margin: 10px 0;
   border: 1px solid #ccc;
-  border-radius: 6px; /* มุมกลมเล็กน้อย */
-  font-size: 16px; /* ขนาดตัวอักษรที่อ่านง่าย */
+  border-radius: 6px;
+  font-size: 16px;
 }
 
 button {
   width: 100%;
-  padding: 15px; /* เพิ่มความสูงปุ่ม */
+  padding: 15px;
   background-color: #4CAF50;
   color: white;
   border: none;
-  border-radius: 6px; /* มุมปุ่มกลม */
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px; /* ขนาดตัวอักษรของปุ่ม */
+  font-size: 16px;
   font-weight: bold;
 }
 
 button:hover {
-  background-color: #45a049; /* เปลี่ยนสีเมื่อวางเมาส์ */
+  background-color: #45a049;
 }
 
 #error-message {
@@ -63,9 +64,5 @@ button:hover {
 
 input[type="text"]:focus, input[type="password"]:focus {
   outline: none;
-  border-color: #4CAF50; /* เปลี่ยนสีเส้นขอบเมื่อคลิกที่กล่องกรอกข้อมูล */
-}
-
-input[type="text"], input[type="password"]::placeholder {
-  color: #888; /* เปลี่ยนสีของ placeholder */
+  border-color: #4CAF50;
 }
