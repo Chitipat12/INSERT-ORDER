@@ -1,3 +1,4 @@
+/* กำหนดให้หน้าเว็บมีการแสดงผลเต็มหน้าจอ */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: url('LOGIN.jpg') no-repeat center center fixed; /* ใช้รูปพื้นหลัง */
+  background: url('LOGIN.jpg') no-repeat center center fixed; /* ใช้ภาพพื้นหลัง */
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -14,98 +15,102 @@ body {
   align-items: center;
 }
 
-.login-container {
-  width: 400px; /* ขนาดกล่องฟอร์ม */
+.container {
+  width: 60%;
+  max-width: 800px;
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.9); /* ลดความโปร่งแสงเพื่อให้มองเห็นเนื้อหาชัดเจน */
-  border-radius: 12px; /* ทำมุมกลม */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเพื่อให้ดูมีมิติ */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-size: 16px;
+}
+
+/* สไตล์หัวข้อ */
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 28px;
 }
 
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #333;
-  font-size: 24px; /* ขนาดตัวอักษรที่ใหญ่ขึ้น */
+  font-size: 22px;
+}
+
+/* สไตล์สำหรับ label */
+label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+  text-align: left;
   font-weight: bold;
 }
 
-input[type="text"], input[type="password"] {
+/* สไตล์ input */
+input[type="text"], input[type="number"], input[type="date"], input[type="url"], input[type="file"], select {
   width: 100%;
-  padding: 15px; /* เพิ่มขนาดเพื่อให้กรอกข้อมูลได้สะดวก */
+  padding: 15px;
   margin: 10px 0;
   border: 1px solid #ccc;
-  border-radius: 6px; /* มุมกลมเล็กน้อย */
-  font-size: 16px; /* ขนาดตัวอักษรที่อ่านง่าย */
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* เมื่อคลิก input */
+input[type="text"]:focus, input[type="number"]:focus {
+  outline: none;
+  border-color: #4CAF50;
 }
 
 button {
   width: 100%;
-  padding: 15px; /* เพิ่มความสูงปุ่ม */
+  padding: 15px;
   background-color: #4CAF50;
   color: white;
   border: none;
-  border-radius: 6px; /* มุมปุ่มกลม */
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px; /* ขนาดตัวอักษรของปุ่ม */
+  font-size: 16px;
   font-weight: bold;
 }
 
 button:hover {
-  background-color: #45a049; /* เปลี่ยนสีเมื่อวางเมาส์ */
+  background-color: #45a049;
 }
 
 #error-message {
   color: red;
-  margin-top: 10px;
   font-size: 14px;
+  margin-top: 10px;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
-  outline: none;
-  border-color: #4CAF50; /* เปลี่ยนสีเส้นขอบเมื่อคลิกที่กล่องกรอกข้อมูล */
+#order-status {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-input[type="text"], input[type="password"]::placeholder {
-  color: #888; /* เปลี่ยนสีของ placeholder */
+/* การจัดเรียงประวัติคำสั่งซื้อ */
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-user.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ผู้สั่งซื้อ - Order Placement</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>สั่งซื้อสินค้า</h1>
+ul li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
 
-    <!-- แบบฟอร์มสำหรับการสั่งซื้อ -->
-    <form id="order-form">
-      <label for="product-name">ชื่อสินค้า:</label>
-      <input type="text" id="product-name" required> <!-- เพิ่มการกรอกข้อมูลสินค้า -->
-
-      <label for="quantity">ปริมาณ:</label>
-      <input type="number" id="quantity" required>
-
-      <label for="price">ราคา:</label>
-      <input type="number" id="price" required>
-
-      <button type="submit">ส่งคำสั่งซื้อ</button> <!-- เพิ่มปุ่มการส่งคำสั่งซื้อ -->
-    </form>
-
-    <h2>สถานะคำสั่งซื้อ</h2>
-    <p id="order-status">สถานะ: รอการอนุมัติ</p>
-
-    <h2>ประวัติคำสั่งซื้อ</h2>
-    <ul id="order-history">
-      <!-- ประวัติคำสั่งซื้อ -->
-    </ul>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
