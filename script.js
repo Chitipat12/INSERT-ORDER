@@ -1,4 +1,3 @@
-/* ----------  script.js  (เวอร์ชันรวมแก้บั๊ก) ---------- */
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- LOGIN ---------- */
@@ -23,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('username', username);
         errorBox.textContent = '';
 
-        alert(`ยินดีต้อนรับ ${users[username].role}`);  // แจ้งเตือนเมื่อเข้าสู่ระบบสำเร็จ
-        window.location.href = 'dashboard.html';           // เปลี่ยนหน้าไปยัง dashboard.html
+        alert(`ยินดีต้อนรับ ${users[username].role}`);
+        window.location.href = 'dashboard.html';  // เปลี่ยนหน้าไปยัง dashboard.html
       } else {
-        errorBox.textContent = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง'; // ถ้าผิดให้แสดงข้อความ
+        errorBox.textContent = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง';
       }
     });
   }
@@ -46,13 +45,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      console.log(`สินค้าที่สั่ง: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`); // แสดงข้อมูลในคอนโซล
+      // เก็บข้อมูลคำสั่งซื้อใน LocalStorage
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+      orders.push({ productName, quantity, price });
+      localStorage.setItem('orders', JSON.stringify(orders));
+
+      // แสดงข้อมูลในคอนโซล
+      console.log(`สินค้าที่สั่ง: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`);
       alert('คำสั่งซื้อได้รับการส่ง!');
 
+      // แสดงคำสั่งซื้อในหน้า history
       const historyUl = document.getElementById('order-history');
       if (historyUl) {
         const li = document.createElement('li');
-        li.textContent = `ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`;  // แสดงข้อมูลคำสั่งซื้อในรายการ
+        li.textContent = `ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`;
         historyUl.appendChild(li);
       }
 
@@ -69,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const orderStatus    = document.getElementById('order-status').value;
       const shippingStatus = document.getElementById('shipping-status').value;
 
-      console.log(`สถานะการชำระเงิน: ${orderStatus}, สถานะการจัดส่ง: ${shippingStatus}`); // แสดงสถานะในคอนโซล
+      console.log(`สถานะการชำระเงิน: ${orderStatus}, สถานะการจัดส่ง: ${shippingStatus}`);
       alert('การอัปเดตคำสั่งซื้อเสร็จสิ้น!');
     });
   }
@@ -82,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.dataset.state = approved ? 'approved' : 'rejected';
 
       const statusText = approved ? 'ได้รับการอนุมัติ' : 'ไม่อนุมัติ';
-      alert(`คำสั่งซื้อ ${statusText}`); // แสดงข้อความแจ้งผลการอนุมัติ
+      alert(`คำสั่งซื้อ ${statusText}`);
       btn.textContent = approved
         ? 'คำสั่งซื้อได้รับการอนุมัติ'
         : 'คำสั่งซื้อไม่ได้รับอนุมัติ';
@@ -94,9 +100,40 @@ document.addEventListener('DOMContentLoaded', () => {
   updateButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       alert('การอัปเดตคำสั่งซื้อเสร็จสิ้น');
-      // เพิ่มโค้ดอัปเดตจริงที่นี่ถ้าต้องการ
     });
   });
 
+  /* ---------- DISPLAY CHART (คำสั่งซื้อสำเร็จ) ---------- */
+  const orders = JSON.parse(localStorage.getItem('orders')) || [];
+  const orderCounts = {
+    'Jan25': 5,
+    'Mar25': 10,
+    'May25': 15,
+    'Jul25': 20,
+    'Sep25': 25,
+    'Nov25': 30
+  };
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: Object.keys(orderCounts),
+      datasets: [{
+        label: 'คำสั่งซื้อสำเร็จ',
+        data: Object.values(orderCounts),
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
 });
-/* ---------- END OF FILE ---------- */
