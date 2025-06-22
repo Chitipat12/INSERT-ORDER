@@ -5,21 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Add chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <!-- Sidebar Navigation -->
   <div class="sidebar">
     <ul>
-      <!-- ลิงก์ไปยังหน้า Dashboard -->
       <li><a href="dashboard.html">HOME</a></li>
-      
-      <!-- ลิงก์ไปยังหน้า Order Placement -->
       <li><a href="order_placement.html">คำสั่งซื้อทั้งหมด</a></li>
-      
-      <!-- ลิงก์ไปยังหน้า Order Approval -->
       <li><a href="order_approval.html">คำสั่งซื้อที่รอการอนุมัติ</a></li>
-      
-      <!-- ลิงก์ไปยังหน้า Admin -->
       <li><a href="admin.html">ตั้งค่า / ผู้ดูแลระบบ</a></li>
     </ul>
   </div>
@@ -48,10 +43,10 @@
     <!-- Chart Section -->
     <div class="chart">
       <h3>ที่ฉันเคยสั่งซื้อสำเร็จ</h3>
-      <img src="chart.jpg" alt="Chart Placeholder" /> <!-- เปลี่ยนเป็นกราฟจริง -->
+      <canvas id="myChart"></canvas> <!-- กราฟแสดงข้อมูล -->
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js"></script> 
 </body>
 </html>
