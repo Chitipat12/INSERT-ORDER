@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="order-container">
+    <h2>แบบฟอร์มการสั่งซื้อ</h2>
+    <form id="order-form">
+      <div class="form-group">
+        <label for="order-date">วันที่แจ้งสั่งซื้อ:</label>
+        <input type="date" id="order-date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="section">Section:</label>
+        <input type="text" id="section" required>
+      </div>
+
+      <div class="form-group">
+        <label for="process">Process:</label>
+        <input type="text" id="process" required>
+      </div>
+
+      <div class="form-group">
+        <label for="product-name">ชื่อสินค้า:</label>
+        <input type="text" id="product-name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="sds">SDS:</label>
+        <input type="text" id="sds" required>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">จำนวน:</label>
+        <input type="number" id="quantity" required>
+      </div>
+
+      <div class="form-group">
+        <label for="unit">หน่วย:</label>
+        <input type="text" id="unit" required>
+      </div>
+
+      <div class="form-group">
+        <label for="usage-date">วันที่ต้องการใช้:</label>
+        <input type="date" id="usage-date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="website">เว็ปไซต์แนบ:</label>
+        <input type="url" id="website">
+      </div>
+
+      <div class="form-group">
+        <label for="image-attachment">รูปภาพแนบ:</label>
+        <input type="file" id="image-attachment">
+      </div>
+
+      <div class="form-group">
+        <label for="status">สถานะ:</label>
+        <select id="status" required>
+          <option value="pending">รอดำเนินการ</option>
+          <option value="approved">อนุมัติแล้ว</option>
+          <option value="completed">เสร็จสิ้น</option>
+        </select>
+      </div>
+
+      <button type="submit">ส่งคำสั่งซื้อ</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
