@@ -1,0 +1,22 @@
+/* กราฟ Chart.js */
+.chart-container {
+  margin-top: 30px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.chart {
+  width: 100%;
+  height: 300px; /* ความสูงของกราฟ */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.chart h3 {
+  text-align: center;
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
