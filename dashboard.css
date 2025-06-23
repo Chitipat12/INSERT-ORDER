@@ -1,7 +1,4 @@
 /* dashboard.css */
-body {
-  background-color: #f4f4f4;
-}
 
 .sidebar {
   width: 250px;
@@ -14,15 +11,99 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้แถบด้านข้าง */
 }
 
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.sidebar li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar li a:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Main Content Area */
 .main-content {
   margin-left: 250px;
   width: calc(100% - 250px);
   padding: 20px;
-  background-color: #f9f9f9;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* เพิ่มเงาภายในพื้นที่เนื้อหา */
+}
+
+/* Header Section */
+.header {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .header h1 {
   color: #333;
+}
+
+#role-message {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Order Summary Section */
+.order-summary {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.order-item {
+  margin-bottom: 15px;
+}
+
+.order-item p {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Chart Section */
+.chart {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.chart canvas {
+  max-width: 100%;
+}
+
+/* Media Queries for Smaller Screens */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    box-shadow: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
 }
