@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>เข้าสู่ระบบ</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">   <!-- ใช้ไฟล์หลัก -->
+  <link rel="stylesheet" href="login.css">   <!-- ใช้ไฟล์สำหรับหน้า Login -->
 </head>
 <body>
-  <!-- Login Form -->
+  <!-- หน้า Login Form -->
   <div class="login-container">
     <h2>เข้าสู่ระบบ</h2>
     <form id="login-form">
       <label for="username">ชื่อผู้ใช้งาน:</label>
-      <input type="text" id="username" placeholder="กรอกชื่อผู้ใช้งาน" required>
-      
+      <input type="text" id="username" required placeholder="กรอกชื่อผู้ใช้งาน">
+
       <label for="password">รหัสผ่าน:</label>
-      <input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
-      
+      <input type="password" id="password" required placeholder="กรอกรหัสผ่าน">
+
       <button type="submit">เข้าสู่ระบบ</button>
       <p id="error-message"></p>
     </form>
   </div>
-  
   <script src="script.js"></script>
 </body>
 </html>
