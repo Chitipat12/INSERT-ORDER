@@ -1,0 +1,28 @@
+/* dashboard.css */
+body {
+  background-color: #f4f4f4;
+}
+
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: white;
+  height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.header h1 {
+  color: #333;
+}
