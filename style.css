@@ -15,55 +15,43 @@ body {
   align-items: center;
 }
 
-.container {
-  width: 60%;
-  max-width: 800px;
+/* ใช้กับทุกหน้า */
+.container, .login-container {
+  width: 50%;
+  max-width: 700px;
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.9); /* ลดความโปร่งแสงเพื่อให้มองเห็นเนื้อหาชัดเจน */
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-size: 16px;
 }
 
-/* สไตล์หัวข้อ */
-h1 {
+/* ใช้สำหรับหัวข้อ */
+h1, h2 {
   margin-bottom: 30px;
   color: #333;
-  font-size: 28px;
 }
 
 h2 {
-  margin-bottom: 15px;
-  color: #333;
-  font-size: 22px;
+  margin-top: 20px;
 }
 
-/* สไตล์สำหรับ label */
+/* ใช้กับฟอร์ม (ชื่อสินค้า, ปริมาณ, ราคา) */
 label {
   font-size: 16px;
   color: #333;
   margin-bottom: 5px;
   display: block;
   text-align: left;
-  font-weight: bold;
 }
 
-/* สไตล์ input */
-input[type="text"], input[type="number"], input[type="date"], input[type="url"], input[type="file"], select {
+input[type="text"], input[type="number"], select {
   width: 100%;
-  padding: 15px;
+  padding: 12px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
-  transition: all 0.3s ease;
-}
-
-/* เมื่อคลิก input */
-input[type="text"]:focus, input[type="number"]:focus {
-  outline: none;
-  border-color: #4CAF50;
 }
 
 button {
@@ -82,10 +70,10 @@ button:hover {
   background-color: #45a049;
 }
 
+/* ข้อความแสดงผล */
 #error-message {
   color: red;
   font-size: 14px;
-  margin-top: 10px;
 }
 
 #order-status {
@@ -94,7 +82,46 @@ button:hover {
   font-weight: bold;
 }
 
-/* การจัดเรียงประวัติคำสั่งซื้อ */
+/* สำหรับ Sidebar Navigation */
+.sidebar {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar li {
+  padding: 8px;
+  text-align: center;
+}
+
+.sidebar li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar li a:hover {
+  background-color: #575757;
+}
+
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+  width: calc(100% - 220px);
+}
+
+.order-summary, .order-item {
+  padding: 10px;
+  margin: 10px 0;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -109,8 +136,24 @@ ul li {
   font-size: 16px;
 }
 
+/* สำหรับส่วน Chart */
+.chart {
+  margin-top: 30px;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   .container {
-    width: 90%;
+    width: 80%;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
   }
 }
