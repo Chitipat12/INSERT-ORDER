@@ -14,145 +14,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
 }
 
-/* Sidebar Styling */
-.sidebar {
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #333;
-  color: white;
-  height: 100vh;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-.sidebar ul {
-  list-style-type: none;
-}
-
-.sidebar li {
-  padding: 10px 20px;
-  margin: 10px 0;
-  border-radius: 6px;
-}
-
-.sidebar li a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.sidebar li a:hover {
-  background-color: #4CAF50;
-  color: white;
-}
-
-/* Main Content Area */
-.main-content {
-  margin-left: 250px; /* Leave space for the sidebar */
-  width: calc(100% - 250px);
-  padding: 20px;
-}
-
-.header {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
-.header h1 {
-  color: #333;
-  text-align: center;
-}
-
-#role-message {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-/* Order Summary Section */
-.order-summary {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.order-item {
-  margin-bottom: 15px;
-}
-
-.order-item p {
-  font-size: 18px;
-}
-
-.chart {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
-.chart canvas {
-  max-width: 100%;
-}
-
-/* Form Styling */
-input[type="text"], input[type="number"], select, button {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-}
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* List Styling */
-ul {
-  list-style-type: none;
-}
-
-ul li {
-  padding: 10px;
-  background-color: #f9f9f9;
-  margin: 5px 0;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Login Form Styling */
+/* Centered Login Form */
 .login-container {
   width: 400px;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.8); 
+  background-color: rgba(255, 255, 255, 0.9); /* เพิ่มความโปร่งแสง */
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin: 50px;
+  position: relative;
 }
 
+/* Heading */
 h2 {
   margin-bottom: 20px;
   color: #333;
   font-size: 24px;
+  font-weight: bold;
 }
 
+/* Input Fields */
 input[type="text"], input[type="password"] {
   width: 100%;
   padding: 15px;
@@ -162,6 +46,12 @@ input[type="text"], input[type="password"] {
   font-size: 16px;
 }
 
+input[type="text"]:focus, input[type="password"]:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+/* Submit Button */
 button {
   width: 100%;
   padding: 15px;
@@ -171,39 +61,37 @@ button {
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
 }
 
 button:hover {
   background-color: #45a049;
 }
 
-/* Error Message Styling */
+/* Error Message */
 #error-message {
   color: red;
   margin-top: 10px;
   font-size: 14px;
 }
 
-/* Input Focus Styling */
-input[type="text"]:focus, input[type="password"]:focus {
-  outline: none;
-  border-color: #4CAF50;
+/* Placeholder Color */
+input[type="text"]::placeholder, input[type="password"]::placeholder {
+  color: #888;
 }
 
-/* Media Queries for Responsive Design */
-@media screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-  }
-
-  .main-content {
-    margin-left: 0;
-    width: 100%;
-  }
-
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
   .login-container {
-    width: 80%;
+    width: 80%; /* ให้ขนาดฟอร์มปรับให้เล็กลงบนอุปกรณ์มือถือ */
     padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 14px;
   }
 }
