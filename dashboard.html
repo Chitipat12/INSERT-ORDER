@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Add chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">   <!-- ใช้ไฟล์หลัก -->
+  <link rel="stylesheet" href="dashboard.css"> <!-- ใช้ไฟล์สำหรับหน้า Dashboard -->
 </head>
 <body>
   <!-- Sidebar Navigation -->
   <div class="sidebar">
     <ul>
       <li><a href="dashboard.html">HOME</a></li>
-      <li><a href="order.html">สั่งซื้อ</a></li>
       <li><a href="order_placement.html">คำสั่งซื้อทั้งหมด</a></li>
       <li><a href="order_approval.html">คำสั่งซื้อที่รอการอนุมัติ</a></li>
       <li><a href="admin.html">ตั้งค่า / ผู้ดูแลระบบ</a></li>
@@ -34,9 +32,6 @@
         <p>คำสั่งซื้อที่รอดำเนินการ: <span id="pending-orders">0</span></p>
       </div>
       <div class="order-item">
-        <p>คำสั่งซื้อทั้งหมด: <span id="orders">0</span></p>
-      </div>
-      <div class="order-item">
         <p>คำสั่งซื้อที่ได้รับการอนุมัติแล้ว: <span id="approved-orders">0</span></p>
       </div>
       <div class="order-item">
@@ -52,5 +47,8 @@
   </div>
 
   <script src="script.js"></script>
+</body>
+</html>
+
 </body>
 </html>
