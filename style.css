@@ -1,51 +1,109 @@
-/* กำหนดให้หน้าเว็บมีการแสดงผลเต็มหน้าจอ */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body and Background */
 body {
   font-family: Arial, sans-serif;
-  background: url('LOGIN.jpg') no-repeat center center fixed; /* ใช้ภาพพื้นหลัง */
+  background: url('LOGIN.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-/* ใช้กับทุกหน้า */
-.container, .login-container {
-  width: 50%;
-  max-width: 700px;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.9); /* ลดความโปร่งแสงเพื่อให้มองเห็นเนื้อหาชัดเจน */
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: white;
+  height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
-/* ใช้สำหรับหัวข้อ */
-h1, h2 {
-  margin-bottom: 30px;
-  color: #333;
+.sidebar ul {
+  list-style-type: none;
 }
 
-h2 {
+.sidebar li {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 6px;
+}
+
+.sidebar li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar li a:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Main Content Area */
+.main-content {
+  margin-left: 250px; /* Leave space for the sidebar */
+  width: calc(100% - 250px);
+  padding: 20px;
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.header h1 {
+  color: #333;
+  text-align: center;
+}
+
+#role-message {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Order Summary Section */
+.order-summary {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.order-item {
+  margin-bottom: 15px;
+}
+
+.order-item p {
+  font-size: 18px;
+}
+
+.chart {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
   margin-top: 20px;
 }
 
-/* ใช้กับฟอร์ม (ชื่อสินค้า, ปริมาณ, ราคา) */
-label {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 5px;
-  display: block;
-  text-align: left;
+.chart canvas {
+  max-width: 100%;
 }
 
-input[type="text"], input[type="number"], select {
+/* Form Styling */
+input[type="text"], input[type="number"], select, button {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
@@ -55,101 +113,33 @@ input[type="text"], input[type="number"], select {
 }
 
 button {
-  width: 100%;
-  padding: 15px;
   background-color: #4CAF50;
   color: white;
-  border: none;
-  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
 }
 
 button:hover {
   background-color: #45a049;
 }
 
-/* ข้อความแสดงผล */
-#error-message {
-  color: red;
-  font-size: 14px;
-}
-
-#order-status {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* สำหรับ Sidebar Navigation */
-.sidebar {
-  width: 200px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #333;
-  padding-top: 20px;
-}
-
-.sidebar ul {
-  list-style-type: none;
-}
-
-.sidebar li {
-  padding: 8px;
-  text-align: center;
-}
-
-.sidebar li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-}
-
-.sidebar li a:hover {
-  background-color: #575757;
-}
-
-.main-content {
-  margin-left: 220px;
-  padding: 20px;
-  width: calc(100% - 220px);
-}
-
-.order-summary, .order-item {
-  padding: 10px;
-  margin: 10px 0;
-}
-
+/* List Styling */
 ul {
   list-style-type: none;
-  padding: 0;
 }
 
 ul li {
-  background-color: #f9f9f9;
   padding: 10px;
+  background-color: #f9f9f9;
   margin: 5px 0;
   border-radius: 6px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
 }
 
-/* สำหรับส่วน Chart */
-.chart {
-  margin-top: 30px;
-  text-align: center;
-}
-
+/* Media Queries */
 @media screen and (max-width: 768px) {
-  .container {
-    width: 80%;
-  }
-
   .sidebar {
     width: 100%;
-    position: relative;
+    height: auto;
   }
 
   .main-content {
