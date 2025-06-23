@@ -1,55 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">   <!-- ใช้ไฟล์หลัก -->
-  <link rel="stylesheet" href="dashboard.css"> <!-- ใช้ไฟล์สำหรับหน้า Dashboard -->
-</head>
-<body>
-  <!-- Sidebar Navigation -->
-  <div class="sidebar">
-    <ul>
-      <li><a href="dashboard.html">HOME</a></li>
-      <li><a href="order.html">สั่งซื้อ</a></li>
-      <li><a href="order_placement.html">คำสั่งซื้อทั้งหมด</a></li>
-      <li><a href="order_approval.html">คำสั่งซื้อที่รอการอนุมัติ</a></li>
-      <li><a href="admin.html">ตั้งค่า / ผู้ดูแลระบบ</a></li>
-    </ul>
+<!-- Sidebar Navigation -->
+<div class="sidebar">
+  <ul>
+    <li><a href="dashboard.html">HOME</a></li>
+    <li><a href="order.html">สั่งซื้อ</a></li>
+    <li><a href="order_placement.html">คำสั่งซื้อทั้งหมด</a></li>
+    <li><a href="order_approval.html">คำสั่งซื้อที่รอการอนุมัติ</a></li>
+    <li><a href="admin.html">ตั้งค่า / ผู้ดูแลระบบ</a></li>
+  </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+  <div class="header">
+    <h1>Dashboard</h1>
+    <div id="role-message">ยินดีต้อนรับ INSERT-ORDER (USER)</div>
   </div>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <div class="header">
-      <h1>Dashboard</h1>
-      <div id="role-message">ยินดีต้อนรับ INSERT-ORDER (USER)</div>
+  <!-- Order Summary Section -->
+  <div class="order-summary">
+    <h2>คำสั่งซื้อ</h2>
+    <div class="order-item">
+      <p>คำสั่งซื้อที่รอดำเนินการ: <span id="pending-orders">0</span></p>
     </div>
-
-    <!-- Order Summary Section -->
-    <div class="order-summary">
-      <h2>คำสั่งซื้อ</h2>
-      <div class="order-item">
-        <p>คำสั่งซื้อที่รอดำเนินการ: <span id="pending-orders">0</span></p>
-      </div>
-      <div class="order-item">
-        <p>คำสั่งซื้อที่ได้รับการอนุมัติแล้ว: <span id="approved-orders">0</span></p>
-      </div>
-      <div class="order-item">
-        <p>คำสั่งซื้อที่ถูกอัปเดตแล้ว: <span id="updated-orders">0</span></p>
-      </div>
+    <div class="order-item">
+      <p>คำสั่งซื้อที่ได้รับการอนุมัติแล้ว: <span id="approved-orders">0</span></p>
     </div>
-
-    <!-- Chart Section -->
-    <div class="chart.css">
-      <h3>ที่ฉันเคยสั่งซื้อสำเร็จ</h3>
-      <canvas id="myChart"></canvas> <!-- กราฟแสดงข้อมูล -->
+    <div class="order-item">
+      <p>คำสั่งซื้อที่ถูกอัปเดตแล้ว: <span id="updated-orders">0</span></p>
     </div>
   </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
-
-</body>
-</html>
+  <!-- Chart Section -->
+  <div class="chart">
+    <h3>ที่ฉันเคยสั่งซื้อสำเร็จ</h3>
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
