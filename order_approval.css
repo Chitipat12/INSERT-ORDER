@@ -1,0 +1,55 @@
+/* order_approval.css */
+.approval-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.order-item p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.order-item button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.order-item .approve {
+  background: #4CAF50;
+  color: #fff;
+}
+
+.order-item .approve:hover {
+  background: #45a049;
+}
+
+.order-item .reject {
+  background: #f44336;
+  color: #fff;
+}
+
+.order-item .reject:hover {
+  background: #e53935;
+}
+
+.order-item textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
