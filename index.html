@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>เข้าสู่ระบบ</title>
-  <!-- สไตล์หลัก (reset / common) -->
+  <!-- 1) สไตล์ทั่วไป -->
   <link rel="stylesheet" href="css/style.css">
-  <!-- สไตล์เฉพาะหน้า Login -->
+  <!-- 2) สไตล์สำหรับหน้า Login -->
   <link rel="stylesheet" href="css/login.css">
 </head>
-<!-- เพิ่ม class="login-page" ที่ body -->
+<!-- ใส่ class="login-page" เพื่อให้ login.css ทำงาน -->
 <body class="login-page">
   <div class="login-container">
     <h2>เข้าสู่ระบบ</h2>
     <form id="login-form">
       <label for="username">ชื่อผู้ใช้งาน:</label>
       <input type="text" id="username" placeholder="กรอกชื่อผู้ใช้งาน" required>
-      
       <label for="password">รหัสผ่าน:</label>
       <input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
-      
       <button type="submit">เข้าสู่ระบบ</button>
       <p id="error-message"></p>
     </form>
