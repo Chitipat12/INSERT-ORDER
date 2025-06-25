@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>เข้าสู่ระบบ</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- สไตล์ reset + common -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- สไตล์เฉพาะหน้า Login -->
+  <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
   <div class="login-container">
@@ -12,15 +15,12 @@
     <form id="login-form">
       <label for="username">ชื่อผู้ใช้งาน:</label>
       <input type="text" id="username" placeholder="กรอกชื่อผู้ใช้งาน" required>
-
       <label for="password">รหัสผ่าน:</label>
       <input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
-
       <button type="submit">เข้าสู่ระบบ</button>
       <p id="error-message"></p>
     </form>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
