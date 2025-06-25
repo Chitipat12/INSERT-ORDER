@@ -1,28 +1,29 @@
 /* css/login.css */
+
+/* เฉพาะเมื่อ body มี class="login-page" เท่านั้น */
 body.login-page {
-  /* แสดงฟอร์มตรงกลางทั้งแนวตั้งและแนวนอน */
+  margin: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background: url('../LOGIN.jpg') no-repeat center center fixed;
   background-size: cover;
-  margin: 0;
 }
 
 .login-container {
-  width: 350px;
-  padding: 30px 25px;
+  width: 360px;
+  padding: 30px;
   background-color: rgba(255,255,255,0.95);
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  text-align: center;
 }
 
 .login-container h2 {
   margin-bottom: 20px;
   color: #333;
   font-size: 26px;
-  text-align: center;
 }
 
 .login-container label {
@@ -67,5 +68,4 @@ body.login-page {
   margin-top: 12px;
   font-size: 14px;
   color: red;
-  text-align: center;
 }
