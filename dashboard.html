@@ -1,40 +1,54 @@
-<!-- Sidebar Navigation -->
-<div class="sidebar">
-  <ul>
-    <li><a href="dashboard.html">HOME</a></li>
-    <li><a href="order.html">สั่งซื้อ</a></li>
-    <li><a href="order_placement.html">คำสั่งซื้อทั้งหมด</a></li>
-    <li><a href="order_approval.html">คำสั่งซื้อที่รอการอนุมัติ</a></li>
-    <li><a href="admin.html">ตั้งค่า / ผู้ดูแลระบบ</a></li>
-  </ul>
-</div>
-
-<!-- Main Content -->
-<div class="main-content">
-  <div class="header">
-    <h1>Dashboard</h1>
-    <div id="role-message">ยินดีต้อนรับ INSERT-ORDER (USER)</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <!-- สไตล์ reset + common -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- สไตล์เฉพาะหน้า Dashboard -->
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <ul>
+      <li><a href="dashboard.html">HOME</a></li>
+      <li><a href="order.html">สั่งซื้อ</a></li>
+      <li><a href="order_placement.html">คำสั่งซื้อทั้งหมด</a></li>
+      <li><a href="order_approval.html">คำสั่งซื้อที่รอการอนุมัติ</a></li>
+      <li><a href="admin.html">ตั้งค่า / ผู้ดูแลระบบ</a></li>
+    </ul>
   </div>
 
-  <!-- Order Summary Section -->
-  <div class="order-summary">
-    <h2>คำสั่งซื้อ</h2>
-    <div class="order-item">
-      <p>คำสั่งซื้อที่รอดำเนินการ: <span id="pending-orders">0</span></p>
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <h1>Dashboard</h1>
+      <div id="role-message">ยินดีต้อนรับ INSERT-ORDER (USER)</div>
     </div>
-    <div class="order-item">
-      <p>คำสั่งซื้อที่ได้รับการอนุมัติแล้ว: <span id="approved-orders">0</span></p>
+
+    <div class="order-summary">
+      <h2>คำสั่งซื้อ</h2>
+      <div class="order-item">
+        <p>คำสั่งซื้อที่รอดำเนินการ: <span id="pending-orders">0</span></p>
+      </div>
+      <div class="order-item">
+        <p>คำสั่งซื้อที่ได้รับการอนุมัติแล้ว: <span id="approved-orders">0</span></p>
+      </div>
+      <div class="order-item">
+        <p>คำสั่งซื้อที่ถูกอัปเดตแล้ว: <span id="updated-orders">0</span></p>
+      </div>
     </div>
-    <div class="order-item">
-      <p>คำสั่งซื้อที่ถูกอัปเดตแล้ว: <span id="updated-orders">0</span></p>
+
+    <div class="chart">
+      <h3>ที่ฉันเคยสั่งซื้อสำเร็จ</h3>
+      <canvas id="myChart"></canvas>
     </div>
   </div>
 
-  <!-- Chart Section -->
-  <div class="chart">
-    <h3>ที่ฉันเคยสั่งซื้อสำเร็จ</h3>
-    <canvas id="myChart"></canvas>
-  </div>
-</div>
+  <script src="script.js"></script>
+</body>
+</html>
 
-<script src="script.js"></script>
