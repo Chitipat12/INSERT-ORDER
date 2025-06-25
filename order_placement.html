@@ -1,19 +1,35 @@
-document.getElementById("order-form").addEventListener("submit", function(event) {
-  event.preventDefault();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>คำสั่งซื้อทั้งหมด</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/order_placement.css">
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="dashboard.html">HOME</a></li>
+      <li><a href="order.html">สั่งซื้อ</a></li>
+      <li><a href="order_placement.html">คำสั่งซื้อทั้งหมด</a></li>
+      <li><a href="order_approval.html">คำสั่งซื้อที่รอการอนุมัติ</a></li>
+      <li><a href="admin.html">ตั้งค่า / ผู้ดูแลระบบ</a></li>
+    </ul>
+  </div>
 
-  // คำนวณการส่งคำสั่งซื้อ
-  const productName = document.getElementById("product-name").value;
-  const quantity = document.getElementById("quantity").value;
-  const price = document.getElementById("price").value;
+  <div class="main-content">
+    <div class="header">
+      <h1>คำสั่งซื้อทั้งหมด</h1>
+      <div id="role-message">ยินดีต้อนรับ INSERT-ORDER (USER)</div>
+    </div>
+    <ul class="placement-list">
+      <li>Order #1: รายละเอียด... <span class="status">รออนุมัติ</span></li>
+      <!-- เพิ่มรายการตามต้องการ -->
+    </ul>
+  </div>
 
-  console.log(`สินค้าที่สั่ง: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`);
-  
-  // ส่งคำสั่งซื้อและเปลี่ยนสถานะ
-  alert("คำสั่งซื้อได้รับการส่ง!");
-
-  // เพิ่มคำสั่งซื้อในประวัติ
-  const orderHistory = document.getElementById('order-history');
-  const newOrder = document.createElement('li');
-  newOrder.textContent = `ชื่อสินค้า: ${productName}, ปริมาณ: ${quantity}, ราคา: ${price}`;
-  orderHistory.appendChild(newOrder);
-});
+  <script src="script.js"></script>
+</body>
+</html>
