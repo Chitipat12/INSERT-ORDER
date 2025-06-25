@@ -1,0 +1,36 @@
+/* order.css */
+.order-form-container {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.order-form-container label {
+  display: block;
+  margin-top: 15px;
+  color: #555;
+}
+
+.order-form-container input,
+.order-form-container select,
+.order-form-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.order-form-container button {
+  background: #4CAF50;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.order-form-container button:hover {
+  background: #45a049;
+}
