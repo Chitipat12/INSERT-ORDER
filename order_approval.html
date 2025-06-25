@@ -1,8 +1,40 @@
-document.querySelectorAll('.order-item .approve-button').forEach((button) => {
-  button.addEventListener('click', function() {
-    const orderStatus = button.textContent === 'อนุมัติ' ? 'ได้รับการอนุมัติ' : 'ไม่อนุมัติ';
-    alert(`คำสั่งซื้อ ${orderStatus}`);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>คำสั่งซื้อที่รอการอนุมัติ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/order_approval.css">
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li><a href="dashboard.html">HOME</a></li>
+      <li><a href="order.html">สั่งซื้อ</a></li>
+      <li><a href="order_placement.html">คำสั่งซื้อทั้งหมด</a></li>
+      <li><a href="order_approval.html">คำสั่งซื้อที่รอการอนุมัติ</a></li>
+      <li><a href="admin.html">ตั้งค่า / ผู้ดูแลระบบ</a></li>
+    </ul>
+  </div>
 
-    button.textContent = orderStatus === 'ได้รับการอนุมัติ' ? 'คำสั่งซื้อได้รับการอนุมัติ' : 'คำสั่งซื้อไม่ได้รับอนุมัติ';
-  });
-});
+  <div class="main-content">
+    <div class="header">
+      <h1>คำสั่งซื้อที่รอการอนุมัติ</h1>
+      <div id="role-message">ยินดีต้อนรับ INSERT-ORDER (MANAGER)</div>
+    </div>
+    <div class="approval-list">
+      <div class="order-item">
+        <p>คำสั่งซื้อที่ #1: รายละเอียด...</p>
+        <button class="approve">อนุมัติ</button>
+        <button class="reject">ไม่อนุมัติ</button>
+        <textarea placeholder="ความคิดเห็น"></textarea>
+      </div>
+      <!-- เพิ่ม order-item ตามต้องการ -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
