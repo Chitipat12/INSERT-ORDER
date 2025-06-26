@@ -1,0 +1,26 @@
+ /* css/style.css */
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+-body {
+-  font-family: Arial, sans-serif;
+-  background: url('LOGIN.jpg') no-repeat center center fixed;
+-  background-size: cover;
+-  height: 100vh;
+-  display: flex;
+-  justify-content: center;
+-  align-items: center;
+-}
++body {
++  font-family: Arial, sans-serif;
++  background: #f5f5f5;
++  color: #333;
++  /* ถ้าต้องการ background เดียวกันทุกหน้า ให้ใช้ด้านบน
++     แต่ห้ามมี display:flex; เพราะจะรบกวนหน้าอื่น */
++}
+
+/* ... ส่วนอื่นๆ ของ style.css ไม่ต้องแตะ ... */
